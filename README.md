@@ -1,5 +1,3 @@
 Hello!
 
-I have made a discord bot to help myself figure out discord.js library.
-
-This bot can help figure out when ursus starts for KMS and is a starforce calculator.
+This bot can help figure out when ursus starts for KMS and is a starforce calculator. 
