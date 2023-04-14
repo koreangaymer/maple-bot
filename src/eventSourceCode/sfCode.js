@@ -41,25 +41,20 @@ function averageCost(itemLevel, currentStar, desiredStar) {
     boomRandom = Math.floor(Math.random() * 100) + 1;
     if (currentStar < 10) {
       if (random >= percent) {
-        totalCost += mesoPerTap;
         currentStar = currentStar;
       } else if (random <= percent) {
-        totalCost += mesoPerTap;
         currentStar += 1;
         mesoPerTap = mesoCost(itemLevel, currentStar);
       }
     } else if (currentStar === 10) {
       if (random >= percent) {
-        totalCost += mesoPerTap;
         currentStar = 10;
       } else if (random <= percent) {
-        totalCost += mesoPerTap;
         currentStar += 1;
         mesoPerTap = mesoCost(itemLevel, currentStar);
       }
     } else if (currentStar === 15) {
       if (random >= percent) {
-        totalCost += mesoPerTap;
         if (boomRandom <= boom) {
           currentStar = 12;
           totalBoom += 1;
@@ -67,13 +62,11 @@ function averageCost(itemLevel, currentStar, desiredStar) {
           currentStar = 15;
         }
       } else if (random <= percent) {
-        totalCost += mesoPerTap;
         currentStar += 1;
         mesoPerTap = mesoCost(itemLevel, currentStar);
       }
     } else if (currentStar === 20) {
       if (random >= percent) {
-        totalCost += mesoPerTap;
         if (boomRandom <= boom) {
           currentStar = 12;
           totalBoom += 1;
@@ -81,13 +74,11 @@ function averageCost(itemLevel, currentStar, desiredStar) {
           currentStar = 20;
         }
       } else if (random <= percent) {
-        totalCost += mesoPerTap;
         currentStar += 1;
         mesoPerTap = mesoCost(itemLevel, currentStar);
       }
     } else if (currentStar > 10 || currentStar > 20) {
       if (random >= percent) {
-        totalCost += mesoPerTap;
         if (boomRandom <= boom) {
           currentStar = 12;
           totalBoom += 1;
@@ -95,11 +86,11 @@ function averageCost(itemLevel, currentStar, desiredStar) {
           currentStar -= 1;
         }
       } else if (random <= percent) {
-        totalCost += mesoPerTap;
         currentStar += 1;
         mesoPerTap = mesoCost(itemLevel, currentStar);
       }
     }
+    totalCost += mesoPerTap;
     count += 1;
   }
   totalCost = Math.ceil(totalCost / 100) * 100;
@@ -142,11 +133,11 @@ function avgMedRange(itemLevel, currentStar, desiredStar, totalTrials) {
   );
   const averageTap = Math.round(tap / totalTrials);
   const averageBoom = Math.round(totalBoom / totalTrials);
-  return {averageTap, average, median, totalBoom, averageBoom, trialCount };
+  return { averageTap, average, median, totalBoom, averageBoom, trialCount };
 }
 
 module.exports = {
-    avgMedRange,
+  avgMedRange,
 };
 
 const math = avgMedRange(200, 20, 22, 1000);

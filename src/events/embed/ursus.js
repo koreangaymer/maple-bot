@@ -32,7 +32,7 @@ module.exports = {
         })
 
         .setTimestamp();
-      interaction.reply({ embeds: [ursusStart] });
+      interaction.reply({ embeds: [ursusStart], ephemeral: true });
     }
   },
 };

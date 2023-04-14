@@ -44,7 +44,7 @@ module.exports = {
           { name: `Taps`, value: `Average Tap: ${averageTap}` })
 
         .setTimestamp();
-      interaction.reply({ embeds: [sf] }, { ephemeral: true });
+      interaction.reply({ embeds: [sf], ephemeral: true });
     }
   },
 };
